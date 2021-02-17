@@ -10,7 +10,9 @@ output:
 ## The best title
 
 My name is *Mia* and I like **squirrels**?
+
 ### Homework Assignments
+
 #### Week 1: Nothing due
 
 #### Week 3: [Link text: Homework 2](Homework_02.html)

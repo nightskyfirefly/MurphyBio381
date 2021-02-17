@@ -10,7 +10,9 @@ output:
 ## HOMEWORK
 
 My name is *Mia* and I like **squirrels**?
+
 ### Homework Assignments
+
 #### Week 1: Nothing due
 
 #### Week 3: Build this page.
