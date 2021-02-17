@@ -7,7 +7,7 @@ output:
     theme: cayman
     highlight: github
 ---
-## Testing
+## The best title
 
 My name is *Mia* and I like **squirrels**?
 ### Homework Assignments
