@@ -11,7 +11,7 @@ My name is *Mia* and I like **squirrels**?
 ### Homework Assignments
 #### Week 1: Nothing due
 
-#### Week 3: [Link text: Homework 3 Answers](Homework/HW3.html)
+#### Week 3: [Link text: Homework 3 Answers](HW3.html)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -37,6 +37,4 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-install.packages("prettydoc")
-library("prettydoc")
 
