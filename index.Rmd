@@ -2,7 +2,10 @@
 title: "My Bio381 Homepage"
 author: "Mia Murphy"
 date: "2/10/2021"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
 ---
 ## Testing
 
