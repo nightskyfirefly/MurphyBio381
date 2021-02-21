@@ -1,0 +1,20 @@
+---
+title: "HW3"
+author: "Mia Murphy"
+date: "2/21/2021"
+output: html_document
+---
+
+```
+First String,Second,1.22,3.4
+Second,More Text,1.555555,2.2220
+Third,x,3,124
+```
+
+```
+# I used \h{2,} and replaced with , (\s put everything on one line and did not work)
+```
+
+## 2
+
+

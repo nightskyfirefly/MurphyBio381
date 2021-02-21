@@ -1,0 +1,39 @@
+. is any character or space in regular expressions
+\. a "period" in a standard search
+
+Wildcards
+\w a single word character [letter, number or _]
+\d a single number character [0-9]
+\t a single tab space
+\s a single space, tab, or a line break
+\n a single line break (try \r if \n is not working)
+\h will remove spaces without removing line break
+
+Quantifiers - add to any of the Wildcards
+\w+ one or more consecutive word characters
+\w* zero or more consecutive word characters
+\w{3} will find exactly 3 consecutive word characters
+\{3,} 3 or more consecutive word characters
+\{3,5} exactly 3, 4, or 5 consecutive word characters
+
+Need match case + wrap around to work in Notepad++ AND need \r
+
+.* "all the rest"
+
+use () to capture pieces of text
+use \1 in replacement statement for first capture;
+\2 for second etc.
+
+Custom character sets
+[ATCG] # a single character that is A, T, C or G
+[ATCG]+ # DNA sequence
+
+Negated character sets
+[^XY] # a single character that is anything BUT X or Y
+[^0-9.]+ # one or more characters that are not integers or decimal numbers
+
+Boundary stakes
+^ # outside of a character set to indicate the start of a line
+$ # indicates the end of a line
+`\<` #start of a word
+`\>` # end of a word (but not in BBedit)
