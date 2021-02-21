@@ -48,7 +48,7 @@
 </div>
 <div id="section" class="section level2">
 <h2>1</h2>
-<pre><code>Problem 1 solved:
+<pre><code>Problem 1:
 
 First String    Second      1.22      3.4
 Second          More Text   1.555555  2.2220
@@ -68,7 +68,7 @@ Third,x,3,124</code></pre>
 </div>
 <div id="section-1" class="section level2">
 <h2>2</h2>
-<pre><code>Problem 2 solved:
+<pre><code>Problem 2:
 
 Ballif, Bryan, University of Vermont
 Ellison, Aaron, Harvard Forest
@@ -85,6 +85,24 @@ Sydne Record (Bryn Mawr)</code></pre>
 
 # I used (^\w+),(\s\w+),\s(.+$) and replaced with \2 \1 \(\3\)
 # At first I tried \2 \1 (\3\) but it needs the backslash infront of (\3\) -- also tried * instead of $ but nothing would highlight/mark.</code></pre>
+</div>
+<div id="section-2" class="section level2">
+<h2>3</h2>
+<pre><code>Problem 3:
+
+0001 Georgia Horseshoe.mp3 0002 Billy In The Lowground.mp3 0003 Cherokee Shuffle.mp3 0004 Walking Cane.mp3
+
+
+Becomes this:
+
+
+0001 Georgia Horseshoe.mp3
+0002 Billy In The Lowground.mp3
+0003 Cherokee Shuffle.mp3
+0004 Walking Cane.mp3</code></pre>
+<pre><code>My Solution:
+
+# I used (mp3+\s*) and replaced with mp3\n</code></pre>
 </div>
 </section>
 
