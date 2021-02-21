@@ -13,11 +13,11 @@ My name is *Mia* and I like **squirrels**
 
 ### Homework Assignments
 
-#### Week 1: Nothing due
+#### Homework 2: [Homework 2](Homework_02.html)
 
-#### Week 3: [Homework 2](Homework_02.html)
+#### Homework 2: [Homework 3](Homework_03.html)
 
-#### To do: HW3, figure out how to add solarized theme to github
+#### To do: Complete HW3, figure out how to add solarized theme to github
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

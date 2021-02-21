@@ -1,20 +1,58 @@
 ---
-title: "HW3"
+title: "Homework 03"
 author: "Mia Murphy"
-date: "2/21/2021"
-output: html_document
+date: "2/18/2021"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
 ---
-
+## 1
 ```
+Problem 1 solved:
+
+First String    Second      1.22      3.4
+Second          More Text   1.555555  2.2220
+Third           x           3         124
+
+
+Becomes this:
+
+
 First String,Second,1.22,3.4
 Second,More Text,1.555555,2.2220
 Third,x,3,124
 ```
 
 ```
-# I used \h{2,} and replaced with , (\s put everything on one line and did not work)
+My Solution:
+
+# I used \h{2,} and replaced with ,
+#(\s{2,} put everything on one line and did not work)
 ```
 
 ## 2
+```
+Problem 2 solved:
+
+Ballif, Bryan, University of Vermont
+Ellison, Aaron, Harvard Forest
+Record, Sydne, Bryn Mawr
+
+
+Becomes this:
+
+
+Bryan Ballif (University of Vermont)
+Aaron Ellison (Harvard Forest)
+Sydne Record (Bryn Mawr)
+```
+
+```
+My Solution:
+
+# I used (^\w+),(\s\w+),\s(.+$) and replaced with \2 \1 \(\3\)
+# At first I tried \2 \1 (\3\) but it needs the backslash infront of (\3\) -- also tried * instead of $ but nothing would highlight/mark.
+```
 
 
