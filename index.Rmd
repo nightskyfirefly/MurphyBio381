@@ -13,9 +13,9 @@ My name is *Mia* and I like **squirrels**
 
 ### Homework Assignments
 
-#### Homework 2: [Homework 2](Homework_02.html)
+#### Homework 2: [Homework 2](Homework/Homework_02.html)
 
-#### Homework 3: [Homework 3](Homework_03.html)
+#### Homework 3: [Homework 3](Homework/Homework_03.html)
 
 #### To do: Complete HW3, figure out how to add solarized theme to github
 
