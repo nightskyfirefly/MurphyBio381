@@ -79,3 +79,27 @@ My Solution:
 # I used (mp3+\s*) and replaced with mp3\n
 ```
 
+## 4
+```
+Problem 4:
+
+0001 Georgia Horseshoe.mp3
+0002 Billy In The Lowground.mp3
+0003 Cherokee Shuffle.mp3
+0004 Walking Cane.mp3
+
+
+Becomes this:
+
+
+Georgia Horseshoe_0001.mp3
+Billy In The Lowground_0002.mp3
+Cherokee Shuffle_0003.mp3
+Walking Cane_0004.mp3
+```
+
+```
+My Solution:
+
+# I used (\d{2,})\s(.*)(\..*) and replaced with \2_\1\3
+```
