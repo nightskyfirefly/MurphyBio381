@@ -54,7 +54,7 @@ Sydne Record (Bryn Mawr)
 ```
 My Solution:
 
-# I used (^\w+),(\s\w+),\s(.+$)
+# I used (\w+), (\w+), (.*)
 # and replaced with \2 \1 \(\3\)
 # At first I tried \2 \1 (\3\)
 # but it needs the backslash infront of (\3\)
