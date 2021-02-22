@@ -58,7 +58,6 @@ My Solution:
 # and replaced with \2 \1 \(\3\)
 # At first I tried \2 \1 (\3\)
 # but it needs the backslash infront of (\3\)
-# also tried * instead of $ but nothing would highlight/mark.
 ```
 
 ## 3
