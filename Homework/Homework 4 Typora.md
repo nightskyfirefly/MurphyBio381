@@ -68,10 +68,11 @@ pnorm(10, 12, 2)
 
 
 
-Do some quick maths: $$2+1=3$$ and $$3*2=6$$ Good job.
+Do some quick maths: $2+1=3$ and $3*2=6$ Good job.
 $$
 Quick maths: 2+2=4
 $$
+
 
 | Yes           | No         |
 | ------------- | ---------- |
@@ -87,5 +88,5 @@ graph TD;
     A-->D(Scare chipmunk);
     D-->E
     B(Feed chipmunk)-->E;
-    C-->E(Chipmunk decides to live in your car);
+    C-->E(Chipmunk decides to live in your car)
 ```
