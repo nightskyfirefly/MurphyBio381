@@ -17,7 +17,9 @@ My name is *Mia* and I like **squirrels**
 
 #### Homework 3: [Homework 3](Homework/Homework_03.html)
 
-#### To do: Complete HW3, figure out how to add solarized theme to github
+#### Homework 3: [Homework 4](Homework/Homework-4-Typora.html)
+
+#### To do: Figure out how to add solarized theme to github
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
