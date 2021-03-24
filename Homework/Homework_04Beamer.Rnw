@@ -24,10 +24,10 @@
 % FONTTHEMES: default, structurebold, structuresmallcapsserif, structureitalicserif, serif, professionalfonts
 
 
-\usetheme{default}
+\usetheme{Singapore}
 % THEMES: default, AnnArbor, Antibes, Bergen, Berkeley, Berlin, Boadilla, boxes, CambridgeUS, Copenhagen, Darmstadt, Dresden, Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins, Luebeck, Madrid, Malmoe, Marburg, Montpellier, PaloAlto, Pittsburgh, Rochester, Singapore, Szeged, Warsaw
 
-\usecolortheme{default}
+\usecolortheme{wolverine}
 %COLORTHEMES: default, albatross, beaver, beetle, crane, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, sidebartab, structure, whale, wolverine 
 
 % DISPLAY OPTIONS--------------------------
@@ -101,11 +101,11 @@ Burlington, VT 05401 USA \\
 \begin{frame}
 \frametitle{Figure}
 % Uncomment the code on this slide to include your own image from the same directory as the template  file.
-% \begin{figure}
-   \includegraphics[width=1.0\linewidth]{Images/Petaurista_nobilis_1.jpg}
+\begin{figure}
+   \includegraphics[width=1.0\linewidth]{Petaurista_nobilis_2.jpg}
 % use this format for absolute sizing
 %\includegraphics[width=3cm, height=4cm]{filename.jpg}
-% \end{figure}
+\end{figure}
 \end{frame}
 
 % SLIDE (TABLE)----------------------------
