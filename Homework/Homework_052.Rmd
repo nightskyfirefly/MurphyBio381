@@ -1,0 +1,112 @@
+---
+title: "Homework 5"
+author: "Mia Murphy"
+date: "3/24/2021"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+
+### 1
+
+```{r}
+x <- (1.1)
+print(x)
+a <- (2.2)
+print(a)
+b <- (3.3)
+print(b)
+
+z <- x^a^b
+print(z)
+```
+
+
+```{r}
+z <- (x^a)^b
+print(z)
+```
+
+
+```{r}
+z <- 3*x^3+2*x^2+1
+print(z)
+```
+
+### 2
+
+```{r}
+a<- seq(1,8,1)
+b<- seq(7,1,-1)
+z<- c(a,b)
+print(z)
+```
+
+
+```{r}
+z<- c(seq(1,8,1),seq(7,1,-1))
+print(z)
+```
+
+
+```{r}
+x<- seq(1,5,1)
+z<- rep(x,x)
+print(z)
+```
+
+
+```{r}
+x <- rep(x=1:5,times=1:5)
+print(x)
+```
+
+
+```{r}
+x <- rep(x=5:1,times=1:5)
+print(x)
+```
+
+### 3
+
+```{r}
+xy <-runif(2)
+print(xy)
+```
+
+### 4
+
+```{r}
+queue <- c("sheep", "fox", "owl", "ant")
+queue <-c(queue, "serpent")
+print(queue)
+queue <-c(queue[2:5])
+print(queue)
+queue <-c("donkey",queue)
+print(queue)
+queue <-c(queue[1:4])
+print(queue)
+queue <- c(queue[-3])
+print(queue)
+queue <- c(queue[-length(queue)],c("aphid","ant"))
+print(queue)
+which(queue == "aphid")
+```
+
+### 5
+
+```{r}
+v1 <- 1:100
+v1[rowSums(outer(v1, c(2, 3, 7), "%%") == 0) == 0]
+```
+
+
+```{r}
+Filter(function(i) { all(i %% c(2,3,7) != 0) }, seq(100))
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
