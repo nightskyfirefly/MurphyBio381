@@ -24,6 +24,8 @@ My name is *Mia* and I like **squirrels**
 
 #### Homework 5: [Homework 5](Homework/Homework_052.html)
 
+#### Homework 6: [Homework 6](Homework/Homework_06.html)
+
 #### To do: Figure out how to add solarized theme to github
 
 ```{r setup, include=FALSE}
