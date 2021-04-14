@@ -140,15 +140,17 @@ a.sourceLine {
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Assign to the variable n_dims a single random integer between 3 and 10.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n_dims<span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n_dims)</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 7</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a vector of consecutive integers from 1 to n_dims^2.</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>vec_a<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>(n_dims)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vec_a)</span></code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+## [26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Use the sample function to randomly reshuffle these values.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vec_b<span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x=</span>vec_a)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vec_b)</span></code></pre></div>
-<pre><code>##  [1] 11 15  7  9  1 12  6 13 14  8  5  2 10  3  4 16</code></pre>
+<pre><code>##  [1] 17 44 45  9 26 11  5 36 43 24 42 20 30  2 14 22 46 41 18 32 33  1 49 40 25
+## [26] 34 27 19 29 13  8 48 31 23 37 10 47  4 38 16 21 35 15  3 28  6 12 39  7</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a square matrix with these elements</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>matrix_a<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data=</span>vec_b,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ncol=</span>n_dims, </span>
@@ -156,54 +158,74 @@ a.sourceLine {
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Print out the matrix.</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(matrix_a)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4]
-## [1,]   11    1   14   10
-## [2,]   15   12    8    3
-## [3,]    7    6    5    4
-## [4,]    9   13    2   16</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+## [1,]   17   36   14    1   29   10   15
+## [2,]   44   43   22   49   13   47    3
+## [3,]   45   24   46   40    8    4   28
+## [4,]    9   42   41   25   48   38    6
+## [5,]   26   20   18   34   31   16   12
+## [6,]   11   30   32   27   23   21   39
+## [7,]    5    2   33   19   37   35    7</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Find a function in r to transpose the matrix.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>trans_matrix_a<span class="ot">&lt;-</span> <span class="fu">t</span>(matrix_a)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(trans_matrix_a)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4]
-## [1,]   11   15    7    9
-## [2,]    1   12    6   13
-## [3,]   14    8    5    2
-## [4,]   10    3    4   16</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+## [1,]   17   44   45    9   26   11    5
+## [2,]   36   43   24   42   20   30    2
+## [3,]   14   22   46   41   18   32   33
+## [4,]    1   49   40   25   34   27   19
+## [5,]   29   13    8   48   31   23   37
+## [6,]   10   47    4   38   16   21   35
+## [7,]   15    3   28    6   12   39    7</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Print it out again and note how it has changed.</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(trans_matrix_a)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4]
-## [1,]   11   15    7    9
-## [2,]    1   12    6   13
-## [3,]   14    8    5    2
-## [4,]   10    3    4   16</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+## [1,]   17   44   45    9   26   11    5
+## [2,]   36   43   24   42   20   30    2
+## [3,]   14   22   46   41   18   32   33
+## [4,]    1   49   40   25   34   27   19
+## [5,]   29   13    8   48   31   23   37
+## [6,]   10   47    4   38   16   21   35
+## [7,]   15    3   28    6   12   39    7</code></pre>
 <p>Diagonals inverse. 20 swaps with 24, 32 with 14, etc.</p>
 <p>(Comparing the first and last print, not middle and last print).</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate the sum and the mean of the elements in the first row and the last row.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sum_a<span class="ot">&lt;-</span> <span class="fu">sum</span>(trans_matrix_a[<span class="dv">1</span>])</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sum_a)</span></code></pre></div>
-<pre><code>## [1] 11</code></pre>
+<pre><code>## [1] 17</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mean_a<span class="ot">&lt;-</span> <span class="fu">mean</span>(trans_matrix_a[<span class="dv">1</span>])</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_a)</span></code></pre></div>
-<pre><code>## [1] 11</code></pre>
+<pre><code>## [1] 17</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sum_b<span class="ot">&lt;-</span> <span class="fu">sum</span>(trans_matrix_a[n_dims])</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sum_b)</span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
+<pre><code>## [1] 15</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mean_b<span class="ot">&lt;-</span> <span class="fu">mean</span>(trans_matrix_a[n_dims])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_b)</span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
+<pre><code>## [1] 15</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Read about the eigen() function and use it on your matrix</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>eigen_time<span class="ot">&lt;-</span> <span class="fu">eigen</span>(trans_matrix_a, <span class="at">symmetric=</span><span class="cn">TRUE</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(eigen_time)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
-## [1] 32.010083 12.588886  7.907073 -8.506042
+## [1] 173.04361  41.54590  30.78591  23.46166  20.45135 -46.97287 -52.31556
 ## 
 ## $vectors
-##            [,1]       [,2]       [,3]       [,4]
-## [1,] -0.6019908  0.1864158 -0.4992035  0.5946865
-## [2,] -0.3072401 -0.8159023  0.4009542  0.2813232
-## [3,] -0.4851888 -0.2632943 -0.3907333 -0.7366107
-## [4,] -0.5547994  0.4798216  0.6613313 -0.1568753</code></pre>
+##            [,1]        [,2]       [,3]        [,4]       [,5]       [,6]
+## [1,] -0.2606693 -0.16107427 -0.1200684  0.56934580  0.5861069 -0.3891229
+## [2,] -0.4967267 -0.32326434  0.3434579 -0.27144936  0.4249831  0.5070298
+## [3,] -0.3514107  0.84466527  0.0378433 -0.05803084  0.2052690 -0.1219597
+## [4,] -0.4839580  0.04284955 -0.2229768 -0.46911148 -0.2148591 -0.1904380
+## [5,] -0.3457588 -0.16618005 -0.7645298  0.16972249 -0.1950149  0.2199675
+## [6,] -0.3955469 -0.27511474  0.4131261  0.10892965 -0.4462060 -0.5086070
+## [7,] -0.2271626  0.22573393  0.2475692  0.58142588 -0.3878630  0.4830078
+##            [,7]
+## [1,]  0.2694395
+## [2,] -0.1393730
+## [3,] -0.3181852
+## [4,]  0.6416645
+## [5,] -0.3912889
+## [6,] -0.3571202
+## [7,]  0.3381723</code></pre>
 <p>Look carefully at the elements of $values and $vectors. What kind of numbers are these?</p>
 <p>Eigan values are numbers of any value and eigan vectors are bound between -1 and 1.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Dig in with the typeof() function to figure out their type.</span></span>
@@ -225,26 +247,26 @@ a.sourceLine {
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code></pre></div>
 <pre><code>## $my_matrix
-##           [,1]      [,2]       [,3]      [,4]
-## [1,] 0.6630014 0.8329283 0.29180447 0.3343927
-## [2,] 0.7625154 0.8309694 0.86197772 0.6207974
-## [3,] 0.6880859 0.1488771 0.23325260 0.4290498
-## [4,] 0.3797441 0.5381036 0.04842615 0.2114871
+##           [,1]       [,2]      [,3]       [,4]
+## [1,] 0.1155046 0.32063210 0.9353363 0.04851795
+## [2,] 0.4519735 0.30497099 0.5985851 0.70461350
+## [3,] 0.6959501 0.01939347 0.1819232 0.59796935
+## [4,] 0.4403479 0.21157657 0.1115331 0.74874078
 ## 
 ## $my_logical
-##   [1]  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
-##  [13]  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [25] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
-##  [37] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE
-##  [49]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE
-##  [61]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [73] FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE
-##  [85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE
-##  [97] FALSE  TRUE FALSE  TRUE
+##   [1] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE
+##  [13] FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
+##  [37]  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+##  [49] FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+##  [61]  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
+##  [73]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE
+##  [85] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+##  [97]  TRUE  TRUE FALSE  TRUE
 ## 
 ## $my_letters
-##  [1] &quot;o&quot; &quot;x&quot; &quot;u&quot; &quot;k&quot; &quot;d&quot; &quot;y&quot; &quot;z&quot; &quot;e&quot; &quot;q&quot; &quot;w&quot; &quot;f&quot; &quot;j&quot; &quot;r&quot; &quot;s&quot; &quot;l&quot; &quot;c&quot; &quot;v&quot; &quot;b&quot; &quot;p&quot;
-## [20] &quot;t&quot; &quot;n&quot; &quot;m&quot; &quot;i&quot; &quot;g&quot; &quot;a&quot; &quot;h&quot;</code></pre>
+##  [1] &quot;j&quot; &quot;r&quot; &quot;e&quot; &quot;o&quot; &quot;c&quot; &quot;l&quot; &quot;i&quot; &quot;v&quot; &quot;d&quot; &quot;p&quot; &quot;z&quot; &quot;b&quot; &quot;x&quot; &quot;t&quot; &quot;f&quot; &quot;g&quot; &quot;a&quot; &quot;n&quot; &quot;k&quot;
+## [20] &quot;s&quot; &quot;q&quot; &quot;y&quot; &quot;u&quot; &quot;h&quot; &quot;w&quot; &quot;m&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a new list, which has the element[2,2] from the matrix, the second element of the logical vector, and the second element of the letters vector.</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>my_new_list <span class="ot">&lt;-</span> <span class="fu">list</span>(my_list<span class="sc">$</span>my_matrix[<span class="dv">2</span>,<span class="dv">2</span>], </span>
@@ -252,13 +274,13 @@ a.sourceLine {
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>                 my_list<span class="sc">$</span>my_letters[<span class="dv">2</span>])</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_new_list)</span></code></pre></div>
 <pre><code>## [[1]]
-## [1] 0.8309694
+## [1] 0.304971
 ## 
 ## [[2]]
-## [1] FALSE
+## [1] TRUE
 ## 
 ## [[3]]
-## [1] &quot;x&quot;</code></pre>
+## [1] &quot;r&quot;</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Use the typeof() function to confirm the underlying data types of each component in this list</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>type1 <span class="ot">&lt;-</span> <span class="fu">typeof</span>(my_new_list[[<span class="dv">1</span>]])</span>
@@ -275,7 +297,7 @@ a.sourceLine {
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>               my_new_list[[<span class="dv">2</span>]],</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>               my_new_list[[<span class="dv">3</span>]]) </span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_vector)</span></code></pre></div>
-<pre><code>## [1] &quot;0.830969359725714&quot; &quot;FALSE&quot;             &quot;x&quot;</code></pre>
+<pre><code>## [1] &quot;0.304970985744148&quot; &quot;TRUE&quot;              &quot;r&quot;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#What is the data type of this vector?</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">typeof</span>(my_vector))</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -287,108 +309,108 @@ a.sourceLine {
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Call the second variable my_letters and fill it with 26 capital letters in random order.</span></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>my_unis <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">26</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>my_letters2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>])</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>my_letters2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>])</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>dframe<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(my_unis, my_letters2)</span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dframe)</span></code></pre></div>
-<pre><code>##       my_unis my_letters2
-## 1  5.78529856           G
-## 2  7.31651634           E
-## 3  6.01162944           I
-## 4  0.73040761           Z
-## 5  1.99926205           P
-## 6  2.07424822           C
-## 7  5.51651215           A
-## 8  4.54655234           D
-## 9  3.07138304           N
-## 10 4.45084502           Y
-## 11 5.10952948           J
-## 12 4.66471885           O
-## 13 6.39809620           T
-## 14 3.48470379           M
-## 15 7.59435689           B
-## 16 2.89896756           F
-## 17 6.11359579           S
-## 18 0.04825642           Q
-## 19 8.11673024           K
-## 20 0.97516242           V
-## 21 4.28014457           W
-## 22 5.48193731           U
-## 23 6.07199021           L
-## 24 3.56116794           H
-## 25 9.19275465           R
-## 26 3.63176350           X</code></pre>
+<pre><code>##      my_unis my_letters2
+## 1  1.5088149           h
+## 2  3.7746431           k
+## 3  8.9075775           l
+## 4  5.0054209           n
+## 5  8.0929080           g
+## 6  0.3490359           y
+## 7  3.8675748           j
+## 8  8.3375235           b
+## 9  4.1744918           s
+## 10 7.1224973           m
+## 11 7.9261636           u
+## 12 3.4283626           r
+## 13 1.7138052           z
+## 14 6.9815189           x
+## 15 4.7249975           t
+## 16 0.3964889           o
+## 17 6.5868845           i
+## 18 9.2978296           p
+## 19 1.0252673           f
+## 20 6.4427013           e
+## 21 3.2465161           v
+## 22 1.6963848           d
+## 23 2.9390212           a
+## 24 0.5006349           c
+## 25 2.6252521           w
+## 26 6.0743682           q</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For the first variable, use a single line of code in R to select 4 random rows and replace the numerical values in those rows with NA.</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>dframe[<span class="fu">sample</span>(<span class="fu">nrow</span>(dframe), <span class="dv">4</span>), <span class="st">&#39;my_unis&#39;</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dframe)</span></code></pre></div>
-<pre><code>##       my_unis my_letters2
-## 1          NA           G
-## 2  7.31651634           E
-## 3  6.01162944           I
-## 4          NA           Z
-## 5  1.99926205           P
-## 6  2.07424822           C
-## 7  5.51651215           A
-## 8  4.54655234           D
-## 9  3.07138304           N
-## 10 4.45084502           Y
-## 11 5.10952948           J
-## 12 4.66471885           O
-## 13 6.39809620           T
-## 14         NA           M
-## 15 7.59435689           B
-## 16 2.89896756           F
-## 17 6.11359579           S
-## 18 0.04825642           Q
-## 19 8.11673024           K
-## 20         NA           V
-## 21 4.28014457           W
-## 22 5.48193731           U
-## 23 6.07199021           L
-## 24 3.56116794           H
-## 25 9.19275465           R
-## 26 3.63176350           X</code></pre>
+<pre><code>##      my_unis my_letters2
+## 1  1.5088149           h
+## 2  3.7746431           k
+## 3  8.9075775           l
+## 4  5.0054209           n
+## 5         NA           g
+## 6  0.3490359           y
+## 7  3.8675748           j
+## 8  8.3375235           b
+## 9  4.1744918           s
+## 10 7.1224973           m
+## 11 7.9261636           u
+## 12 3.4283626           r
+## 13 1.7138052           z
+## 14        NA           x
+## 15        NA           t
+## 16 0.3964889           o
+## 17 6.5868845           i
+## 18 9.2978296           p
+## 19 1.0252673           f
+## 20 6.4427013           e
+## 21 3.2465161           v
+## 22 1.6963848           d
+## 23        NA           a
+## 24 0.5006349           c
+## 25 2.6252521           w
+## 26 6.0743682           q</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For the first variable, write a single line of R code to identify which rows have the missing values.</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>missing <span class="ot">&lt;-</span> dframe[<span class="fu">is.na</span>(dframe<span class="sc">$</span>my_unis),]</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(missing)</span></code></pre></div>
 <pre><code>##    my_unis my_letters2
-## 1       NA           G
-## 4       NA           Z
-## 14      NA           M
-## 20      NA           V</code></pre>
+## 5       NA           g
+## 14      NA           x
+## 15      NA           t
+## 23      NA           a</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For the second variable, sort it in alphabetical order</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>dframe<span class="sc">$</span>my_letters2 <span class="ot">&lt;-</span> <span class="fu">sort</span>(dframe<span class="sc">$</span>my_letters2)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dframe)</span></code></pre></div>
-<pre><code>##       my_unis my_letters2
-## 1          NA           A
-## 2  7.31651634           B
-## 3  6.01162944           C
-## 4          NA           D
-## 5  1.99926205           E
-## 6  2.07424822           F
-## 7  5.51651215           G
-## 8  4.54655234           H
-## 9  3.07138304           I
-## 10 4.45084502           J
-## 11 5.10952948           K
-## 12 4.66471885           L
-## 13 6.39809620           M
-## 14         NA           N
-## 15 7.59435689           O
-## 16 2.89896756           P
-## 17 6.11359579           Q
-## 18 0.04825642           R
-## 19 8.11673024           S
-## 20         NA           T
-## 21 4.28014457           U
-## 22 5.48193731           V
-## 23 6.07199021           W
-## 24 3.56116794           X
-## 25 9.19275465           Y
-## 26 3.63176350           Z</code></pre>
+<pre><code>##      my_unis my_letters2
+## 1  1.5088149           a
+## 2  3.7746431           b
+## 3  8.9075775           c
+## 4  5.0054209           d
+## 5         NA           e
+## 6  0.3490359           f
+## 7  3.8675748           g
+## 8  8.3375235           h
+## 9  4.1744918           i
+## 10 7.1224973           j
+## 11 7.9261636           k
+## 12 3.4283626           l
+## 13 1.7138052           m
+## 14        NA           n
+## 15        NA           o
+## 16 0.3964889           p
+## 17 6.5868845           q
+## 18 9.2978296           r
+## 19 1.0252673           s
+## 20 6.4427013           t
+## 21 3.2465161           u
+## 22 1.6963848           v
+## 23        NA           w
+## 24 0.5006349           x
+## 25 2.6252521           y
+## 26 6.0743682           z</code></pre>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate the column mean for the first variable.</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dframe<span class="sc">$</span>my_unis, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 4.915953</code></pre>
+<pre><code>## [1] 4.273102</code></pre>
 </div>
 </section>
 

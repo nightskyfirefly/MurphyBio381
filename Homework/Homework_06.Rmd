@@ -132,7 +132,7 @@ print(typeof(my_vector))
 #Call the second variable my_letters and fill it with 26 capital letters in random order.
 
 my_unis <- runif(26, 0, 10)
-my_letters2 <- sample(LETTERS[1:26])
+my_letters2 <- sample(letters[1:26])
 
 dframe<- data.frame(my_unis, my_letters2)
 print(dframe)

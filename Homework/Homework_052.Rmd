@@ -12,6 +12,10 @@ output:
 ### 1
 
 ```{r}
+#Suppose x = 1.1, a = 2.2, and b = 3.3.
+
+#Assign each expression to the value of the variable z and print the value stored in z.
+
 x <- (1.1)
 print(x)
 a <- (2.2)
@@ -23,13 +27,6 @@ z <- x^a^b
 print(z)
 ```
 
-
-```{r}
-z <- (x^a)^b
-print(z)
-```
-
-
 ```{r}
 z <- 3*x^3+2*x^2+1
 print(z)
@@ -38,6 +35,15 @@ print(z)
 ### 2
 
 ```{r}
+
+#Using the rep and seq functions, create the following vectors:
+
+#(1,2,3,4,5,6,7,8,7,6,5,4,3,2,1)
+
+#(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5)
+
+#(5,4,4,3,3,3,2,2,2,2,1,1,1,1,1)
+
 a<- seq(1,8,1)
 b<- seq(7,1,-1)
 z<- c(a,b)
@@ -52,45 +58,70 @@ print(z)
 
 
 ```{r}
-x<- seq(1,5,1)
-z<- rep(x,x)
+x <- seq(1, 5, 1)
+z <- rep(x,x)
 print(z)
 ```
 
 
 ```{r}
-x <- rep(x=1:5,times=1:5)
+x <- rep(x=1:5, times=1:5)
 print(x)
 ```
 
 
 ```{r}
-x <- rep(x=5:1,times=1:5)
+x <- rep(x=5:1, times=1:5)
 print(x)
 ```
 
 ### 3
 
 ```{r}
-xy <-runif(2)
+xy <- runif(2)
 print(xy)
 ```
 
+```{r}
+#Create a vector of two random uniform numbers.
+#In a spatial map, these can be interpreted as 
+#x and y coordinates that give the location of an individual
+#(such as a marked forest tree in a plot that has been mapped).
+#Using one of R’s inverse trigonometry functions (asin(), acos(), or atan()),
+#convert these numbers into polar coordinates
+#(If you don’t know what polar coordinates are, read about them on the web here or in your calculus textbook).
+set.seed(50)
+quest_3 <- runif(2)
+r = sqrt(quest_3[1]^2 + quest_3[2]^2)
+theta = atan(quest_3[2]/quest_3[1])
+
+polar <- c(r, theta)
+polar
+```
 ### 4
 
 ```{r}
+#Suppose that queue <- c(“sheep”, “fox”, “owl”, “ant”)
+#and that queue represents the animals that are lined up to enter Noah’s Ark, with the sheep at the front of the line.
+#Using R expressions, update the queue successively as
+
+#the serpent arrives and gets in line; the sheep enters the ark; the donkey arrives and
+#talks his way to the front of the line; the serpent gets impatient and leaves;
+#the owl gets bored and leaves; the aphid arrives and the ant invites him to cut in line.
+#Finally, determine the position of the aphid in the line.
+
 queue <- c("sheep", "fox", "owl", "ant")
-queue <-c(queue, "serpent")
+queue <- c(queue, "serpent")
 print(queue)
-queue <-c(queue[2:5])
+queue <- c(queue[2:5])
 print(queue)
-queue <-c("donkey",queue)
+queue <- c("donkey", queue)
 print(queue)
-queue <-c(queue[1:4])
+queue <- c(queue[1:4])
 print(queue)
 queue <- c(queue[-3])
 print(queue)
-queue <- c(queue[-length(queue)],c("aphid","ant"))
+queue <- c(queue[-length(queue)], c("aphid","ant"))
 print(queue)
 which(queue == "aphid")
 ```
@@ -98,6 +129,7 @@ which(queue == "aphid")
 ### 5
 
 ```{r}
+#Use R to create a vector of all of the integers from 1 to 100 that are not divisible by 2, 3, or 7.
 v1 <- 1:100
 v1[rowSums(outer(v1, c(2, 3, 7), "%%") == 0) == 0]
 ```
