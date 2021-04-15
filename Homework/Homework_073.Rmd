@@ -118,23 +118,25 @@ Plot histogram of data
 Plot a histogram of the data, using a modification of the code from lecture. Here we are switching from qplot to ggplot for more graphics options. We are also rescaling the y axis of the histogram from counts to density, so that the area under the histogram equals 1.0.
 
 ```{r}
-str(data)
-summary(data)
+d_raw <- read.table("d_raw",header=TRUE,sep=",", stringsAsFactors=FALSE)
+str(d_raw)
+summary(d_raw)
+summary(d_raw$approaches)
 ```
 
 ```{r}
-data <- rnorm(n=3000,mean=0.2)
-data <- data.frame(1:3000, data)
-names(data) <- list("ID","myVar")
-d_raw4 <- data[data$myVar>0,]
-str(data)
-summary(data$myVar)
+d_raw2 <- rnorm(n=3000,mean=0.2)
+d_raw3 <- data.frame(1:3000, data)
+names(data) <- list("ID","approaches")
+d_raw4 <- data[data$approaches>0,]
+str(d_raw4)
+summary(d_raw4$approaches)
 ```
 Add empirical density curve
 
 Now modify the code to add in a kernel density plot of the data. This is an empirical curve that is fitted to the data. It does not assume any particular probability distribution, but it smooths out the shape of the histogram:
 ```{r}
-p1 <- ggplot(data=data, aes(x=myVar, y=..density..)) +
+p1 <- ggplot(data=d_raw3, aes(x=myVar, y=..density..)) +
   geom_histogram(color="grey60", fill="cornsilk", size=0.2) 
 print(p1)
 ```
@@ -189,18 +191,18 @@ Plot uniform probability density
 For the uniform, we don’t need to use fitdistr because the maximum likelihood estimators of the two parameters are just the minimum and the maximum of the data:
 
 ```{r}
-stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(data$myVar), args = list(min=min(data$myVar), max=max(data$myVar)))
+stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(data$age), args = list(min=min(data$age), max=max(data$age)))
  p1 + stat + stat2 + stat3
 ```
 
 Plot gamma probability density
 
 ```{r}
-gammaPars <- fitdistr(data$myVar,"gamma")
+gammaPars <- fitdistr(data$age,"gamma")
 shapeML <- gammaPars$estimate["shape"]
 rateML <- gammaPars$estimate["rate"]
 
-stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(data$myVar), args = list(shape=shapeML, rate=rateML))
+stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(data$age), args = list(shape=shapeML, rate=rateML))
  p1 + stat + stat2 + stat3 + stat4
 ```
 

@@ -70,12 +70,11 @@ print(eigen_time)
 
 Look carefully at the elements of $values and $vectors. What kind of numbers are these?
 
-Eigan values are numbers of any value and eigan vectors are bound between -1 and 1.
-
 
 ```{r}
 #Dig in with the typeof() function to figure out their type.
-typeof(eigen_time)
+typeof(eigen_time$values)
+typeof(eigen_time$vectors)
 ```
 
 If have set your code up properly, you should be able to re-run it and create a matrix of different size because n_dims will change.
@@ -89,7 +88,7 @@ If have set your code up properly, you should be able to re-run it and create a 
 
 #my_letters, which is a 26-element vector of all the lower-case letters in random order.
 
-my_list <- list(my_matrix = matrix(runif(16), nrow=4),
+my_list <- list(my_matrix = matrix(as.integer(runif(16,1,20)), nrow=4),
                 my_logical = .5 < runif(100),
                 my_letters = sample(letters))
 
@@ -132,27 +131,23 @@ print(typeof(my_vector))
 #Call the first variable my_unis and fill it with 26 random uniform values from 0 to 10
 #Call the second variable my_letters and fill it with 26 capital letters in random order.
 
-my_unis <- runif(26, 0, 10)
-my_letters2 <- sample(letters[1:26])
+my_unis <- as.integer(runif(26, 0, 10))
+my_letters2 <- sample(LETTERS[1:26])
 
-dframe <- data.frame(my_unis, my_letters2)
+dframe <- data.frame(my_unis, my_letters2, stringsAsFactors = FALSE)
 print(dframe)
 ```
 ```{r}
 #For the first variable, use a single line of code in R to select 4 random rows and replace the numerical values in those rows with NA.
-dframe[sample(nrow(dframe), 4), 'my_unis'] <- NA
-print(dframe)
-
+#For the first variable, write a single line of R code to identify which rows have the missing values.
+dframe[sample(1:26, 4), 'my_unis'] <- NA
 ```
 ```{r}
-#For the first variable, write a single line of R code to identify which rows have the missing values.
-missing <- dframe[is.na(dframe$my_unis),]
-print(missing)
+which(is.na(dframe))
 ```
 ```{r}
 #For the second variable, sort it in alphabetical order
-dframe$my_letters2 <- sort(dframe$my_letters2)
-print(dframe)
+sort(dframe$my_letters)
 ```
 ```{r}
 #Calculate the column mean for the first variable.

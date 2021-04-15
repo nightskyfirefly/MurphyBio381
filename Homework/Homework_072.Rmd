@@ -17,7 +17,7 @@ Open libraries
 ```{r}
 library(ggplot2)
 library(MASS)
-library(dplyr)
+library("tidytuesdayR")
 ```
 
 With fake data:
@@ -92,23 +92,9 @@ pSpecial + statSpecial
 
 With data from tidytuesday:
 
-
 ```{r}
-library(tidyverse)
-library(lubridate)
-library(janitor)
-library(naniar)
-
-d_raw <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-10-29/nyc_squirrels.csv')
-
-#Identify Columns to Be Dropped
-drop_columns <- c('long', 'lat', 'lat_long', 'zip_codes', 
-                  'community_districts', 'borough_boundaries', 
-                  'city_council_districts', 'police_precincts', 'color_notes')
-
-#Drop The Columns
-data <- d_raw %>% select(-drop_columns) %>% 
-  mutate(date = mdy(date))
+tuesdata <- tidytuesdayR::tt_load('2021-04-06')
+forest_change <- tuesdata$forest_change
 ```
 
 In the third step of this exercise, you will substitute in your own data for this fake data set. But for now, use the code chunks below to see how you fit different statistical distributions to a vector of observations, and then estimate the maximum likelihood parameters for each distribution.
@@ -118,23 +104,23 @@ Plot histogram of data
 Plot a histogram of the data, using a modification of the code from lecture. Here we are switching from qplot to ggplot for more graphics options. We are also rescaling the y axis of the histogram from counts to density, so that the area under the histogram equals 1.0.
 
 ```{r}
-str(data)
-summary(data)
+str(forest_change)
+summary(forest_change)
 ```
 
 ```{r}
-data <- rnorm(n=3000,mean=0.2)
-data <- data.frame(1:3000, data)
-names(data) <- list("ID","myVar")
-d_raw4 <- data[data$myVar>0,]
-str(data)
-summary(data$myVar)
+forest_change <- rnorm(n=3000,mean=0.2)
+forest_change <- data.frame(1:3000, forest_change)
+names(forest_change) <- list("ID","myVar")
+forest_change <- forest_change[forest_change$myVar>0,]
+str(forest_change)
+summary(forest_change$myVar)
 ```
 Add empirical density curve
 
 Now modify the code to add in a kernel density plot of the data. This is an empirical curve that is fitted to the data. It does not assume any particular probability distribution, but it smooths out the shape of the histogram:
 ```{r}
-p1 <- ggplot(data=data, aes(x=myVar, y=..density..)) +
+p1 <- ggplot(data=forest_change, aes(x=myVar, y=..density..)) +
   geom_histogram(color="grey60", fill="cornsilk", size=0.2) 
 print(p1)
 ```
@@ -149,7 +135,7 @@ Get maximum likelihood parameters for normal
 Next, fit a normal distribution to your data and grab the maximum likelihood estimators of the two parameters of the normal, the mean and the variance:
 
 ```{r}
-normPars <- fitdistr(data$myVar, "normal")
+normPars <- fitdistr(forest_change$myVar, "normal")
 print(normPars)
 str(normPars)
 normPars$estimate["mean"]
@@ -163,9 +149,9 @@ Now let’s call the dnorm function inside ggplot’s stat_function to generate 
 meanML <- normPars$estimate["mean"]
 sdML <- normPars$estimate["sd"]
 
-xval <- seq(0,max(data$myVar),len=length(data$myVar))
+xval <- seq(0,max(forest_change$myVar),len=length(forest_change$myVar))
 
- stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(data$myVar), args = list(mean = meanML, sd = sdML))
+ stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(forest_change$myVar), args = list(mean = meanML, sd = sdML))
  p1 + stat
 
 ```
@@ -177,10 +163,10 @@ Plot exponential probability density
 Now let’s use the same template and add in the curve for the exponential:
 
 ```{r}
-rstudiexpoPars <- fitdistr(data$myVar,"exponential")
+expoPars <- fitdistr(forest_change$myVar,"exponential")
 rateML <- expoPars$estimate["rate"]
 
-stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(data$myVar), args = list(rate=rateML))
+stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(forest_change$myVar), args = list(rate=rateML))
  p1 + stat + stat2
 ```
 
@@ -189,18 +175,18 @@ Plot uniform probability density
 For the uniform, we don’t need to use fitdistr because the maximum likelihood estimators of the two parameters are just the minimum and the maximum of the data:
 
 ```{r}
-stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(data$myVar), args = list(min=min(data$myVar), max=max(data$myVar)))
+stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(forest_change$myVar), args = list(min=min(forest_change$myVar), max=max(forest_change$myVar)))
  p1 + stat + stat2 + stat3
 ```
 
 Plot gamma probability density
 
 ```{r}
-gammaPars <- fitdistr(data$myVar,"gamma")
+gammaPars <- fitdistr(forest_change$myVar,"gamma")
 shapeML <- gammaPars$estimate["shape"]
 rateML <- gammaPars$estimate["rate"]
 
-stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(data$myVar), args = list(shape=shapeML, rate=rateML))
+stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(forest_change$myVar), args = list(shape=shapeML, rate=rateML))
  p1 + stat + stat2 + stat3 + stat4
 ```
 
@@ -209,18 +195,18 @@ Plot beta probability density
 This one has to be shown in its own plot because the raw data must be rescaled so they are between 0 and 1, and then they can be compared to the beta.
 
 ```{r}
-pSpecial <- ggplot(data=data, aes(x=myVar/(max(myVar + 0.1)), y=..density..)) +
+pSpecial <- ggplot(data=forest_change, aes(x=myVar/(max(myVar + 0.1)), y=..density..)) +
   geom_histogram(color="grey60", fill="cornsilk", size=0.2) + 
   xlim(c(0,1)) +
   geom_density(size=0.75,linetype="dotted")
 
-betaPars <- fitdistr(x=data$myVar/max(data$myVar + 0.1), start=list(shape1=1, shape2=2),"beta")
+betaPars <- fitdistr(x=forest_change$myVar/max(forest_change$myVar + 0.1), start=list(shape1=1, shape2=2),"beta")
 shape1ML <- betaPars$estimate["shape1"]
 shape2ML <- betaPars$estimate["shape2"]
 
-statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(data$myVar), args = list(shape1=shape1ML,shape2=shape2ML))
+statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(forest_change$myVar), args = list(shape1=shape1ML,shape2=shape2ML))
 pSpecial + statSpecial
 ```
 
 Seems that there are a lot of errors with both the fake data and the imported data.
- 
+
