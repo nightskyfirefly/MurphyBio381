@@ -28,7 +28,8 @@ My name is *Mia* and I like **squirrels**
 
 #### Homework 7: [Homework 7](Homework/Homework_07.html)
 
-#### To do: Figure out how to add solarized theme to github, fix HW 7 by finding a better dataset
+#### Homework 8: [Homework 8](Homework/Homework_08.html)
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
