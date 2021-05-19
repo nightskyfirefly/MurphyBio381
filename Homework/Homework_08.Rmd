@@ -37,9 +37,9 @@ with exact numbers for this project).
 library(ggplot2)
 
 # Create random data
-preysize <- rnorm(n=40, mean=100, sd=20) # independent variable
+preysize <- rnorm(n=40, mean=100, sd=20)
 filler <- rnorm(n=40, sd=3)
-wolf <- 2 + preysize*.2 + filler # dependent variable
+wolf <- 2 + preysize*.2 + filler
 
 plot(wolf,preysize)
 ```
@@ -70,9 +70,9 @@ print(myplot)
 
 ```{r}
 # Create random data
-preysize <- rnorm(n=40, mean=3200, sd=40) # independent variable
+preysize <- rnorm(n=40, mean=3200, sd=40)
 filler <- rnorm(n=40, sd=2)
-wolf <- 2 + preysize*.01 + filler # dependent variable
+wolf <- 2 + preysize*.01 + filler
 
 plot(wolf,preysize)
 ```
@@ -81,9 +81,9 @@ plot(wolf,preysize)
 
 ```{r}
 # Create random data
-preysize <- rnorm(n=100, mean=3200, sd=100) # independent variable
+preysize <- rnorm(n=100, mean=3200, sd=100)
 filler <- rnorm(n=100, sd=2)
-wolf <- 2 + preysize*.01 + filler # dependent variable
+wolf <- 2 + preysize*.01 + filler
 
 plot(wolf,preysize)
 ```

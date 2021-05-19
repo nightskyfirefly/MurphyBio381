@@ -16,8 +16,93 @@ output:
 
 ### Use the code that you worked on in Homework #8 (creating fake data sets), and re-organize it following the principles of structured programming. Do all the work in a single chunk in your R markdown file, just as if you were writing a single R script. Start with all of your annotated functions, preliminary calls, and global variables. The program body should be only a few lines of code that call the appropriate functions and run them in the correct order. Make sure that the output from one function serves as the input to the next. You can either daisy-chain the functions or write separate lines of code to hold elements in temporary variables and pass the along.
 
-### Once your code is up and working, modify your program do something else: record a new summary variable, code a new statistical analysis, or create a different set of random variables or output graph. Do not rewrite any of your existing functions. Instead, copy them, rename them, and then modify them to do new things. Once your new functions are written, add some more lines of program code, calling a mixture of your previous functions and your new functions to get te job done.
 
-### Optional. If time permits and you have the skills, try putting your program inside of a for loop and repeat the analysis with a different stochastic data set (each time you call a function that invokes the random number generator, it will create a new set of data for you to process). Can you create a data structure to store the summary statistics created in each pass through the loop? If not, your program will work, but it will only show the results from the final replicate (the previous results will be written over each time you traverse the loop).
+```{r}
+library(ggplot2)
+#Create fake data to mimic bison as main prey
+#considering young bison weight for the mean and SD
 
+fake1 <- function(size = 3500, preymean = 1500, preySD = 500, filler = 0.9, slope= 3) {
+      preysize <- rnorm(n = size, mean = preymean, sd = preySD) 
+  filler <- rnorm(n = size, sd = filler) 
+      wolf <- 0.002 * preysize * slope + filler
 
+      framedata <- seq_len(3500) 
+      fake2 <- data.frame(framedata, preysize, wolf)
+      return(fake2)}
+```
+
+```{r}
+fake2 <- fake1()
+head(fake2)
+```
+
+```{r}
+#Create output graph to display data
+#seeking positive linear pattern
+graphing <- function() {
+  newgraph <- ggplot(data = fake2, aes(x = wolf, y = preysize)) +
+                 geom_jitter() +
+                 stat_smooth(method = lm)
+  return(newgraph)
+}
+
+graphing()
+
+```
+### Once your code is up and working, modify your program do something else: record a new summary variable, code a new statistical analysis, or create a different set of random variables or output graph. Do not rewrite any of your existing functions. Instead, copy them, rename them, and then modify them to do new things. Once your new functions are written, add some more lines of program code, calling a mixture of your previous functions and your new functions to get the job done.
+
+```{r}
+library(ggplot2)
+#Create fake data to mimic deer as main prey
+#considering young deer weight for the mean and SD
+
+fake4 <- function(size2 = 350, preymean2 = 200, preySD2 = 20, filler2 = 1, slope2 = 1) {
+      newpreysize <- rnorm(n = size2, mean = preymean2, sd = preySD2) 
+  filler2 <- rnorm(n = size2, sd = filler2) 
+      wolf2 <- 0.02 * newpreysize * slope2 + filler2
+
+      framedata2 <- seq_len(350) 
+      fake5 <- data.frame(framedata2, newpreysize, wolf2)
+      return(fake5)}
+```
+
+```{r}
+fake5 <- fake4()
+head(fake5)
+```
+
+```{r}
+#Create output graph to display data
+#seeking positive linear pattern
+graphing2 <- function() {
+  newgraph2 <- ggplot(data = fake5, aes(x = wolf2, y = newpreysize)) +
+                 geom_jitter() +
+                 stat_smooth(method = lm)
+  return(newgraph2)
+}
+
+graphing2()
+
+```
+
+```{r}
+#Create new output graph
+library(ggplot2)
+library(tidyverse)
+library(ggthemes)
+library(ggsci)
+library(dbplyr)
+#Create fake data to mimic deer as main prey
+#considering young deer weight for the mean and SD
+
+ggplot(data = fake5,
+       mapping = aes(x = wolf2, y = newpreysize)) +
+  geom_point(color = "black", size = 2) +
+  stat_smooth(method = lm) +
+  labs(x = "Wolf pack size", y = "Prey weight",
+       title = "Wolf pack size rises with heavier prey weight",
+       subtitle = "Fake data") +
+  theme_classic() +
+  theme(axis.text.x=element_text(angle = 50, vjust = .7, hjust = .7))
+```

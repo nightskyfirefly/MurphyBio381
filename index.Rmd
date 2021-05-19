@@ -30,6 +30,14 @@ My name is *Mia* and I like **squirrels**
 
 #### Homework 8: [Homework 8](Homework/Homework_08.html)
 
+#### Homework 9: [Homework 9](Homework/Homework_09.html)
+
+#### Homework 10: [Homework 10](Homework/Homework_010.html)
+
+#### Homework 11: [Homework 11](Homework/Homework_11.html)
+
+#### Homework 12: [Homework 12](Homework/Homework_12.html)
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
