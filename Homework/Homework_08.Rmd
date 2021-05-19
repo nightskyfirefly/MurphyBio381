@@ -10,13 +10,13 @@ output:
 
 
 
-Creating Fake Data Sets To Explore Hypotheses
+### Creating Fake Data Sets To Explore Hypotheses
 
 
-Think about an ongoing study in your lab (or a paper you have read in a different class), and decide on a pattern that you might expect in your experiment if a specific hypothesis were true.
+### Think about an ongoing study in your lab (or a paper you have read in a different class), and decide on a pattern that you might expect in your experiment if a specific hypothesis were true.
 
 
-To start simply, assume that the data in each of your treatment groups follow a normal distribution. Specify the sample sizes, means, and variances for each group that would be reasonable if your hypothesis were true. You may need to consult some previous literature and/or an expert in the field to come up with these numbers.
+### To start simply, assume that the data in each of your treatment groups follow a normal distribution. Specify the sample sizes, means, and variances for each group that would be reasonable if your hypothesis were true. You may need to consult some previous literature and/or an expert in the field to come up with these numbers.
 
 Hypothesis: Wolf pack size is larger when prey species are larger.
 
@@ -31,7 +31,7 @@ however it did not differentiate prey weight, making it more difficult to come u
 with exact numbers for this project).
 
 
-Using the methods we have covered in class, write code to create a random data set that has these attributes. Organize these data into a data frame with the appropriate structure.
+### Using the methods we have covered in class, write code to create a random data set that has these attributes. Organize these data into a data frame with the appropriate structure.
 
 ```{r}
 library(ggplot2)
@@ -44,7 +44,7 @@ wolf <- 2 + preysize*.2 + filler # dependent variable
 plot(wolf,preysize)
 ```
 
-Now write code to analyze the data (probably as an ANOVA or regression analysis, but possibly as a logistic regression or contingency table analysis. Write code to generate a useful graph of the data.
+### Now write code to analyze the data (probably as an ANOVA or regression analysis, but possibly as a logistic regression or contingency table analysis. Write code to generate a useful graph of the data.
 
 ```{r}
 frame1 <- seq_len(40)
@@ -63,10 +63,10 @@ myplot <- ggplot(data=data1, aes(x=wolf, y=preysize)) +
 print(myplot)
 ```
 
-Try running your analysis multiple times to get a feeling for how variable the results are with the same parameters, but different sets of random numbers.
+### Try running your analysis multiple times to get a feeling for how variable the results are with the same parameters, but different sets of random numbers.
 
 
-Now begin adjusting the means of the different groups. Given the sample sizes you have chosen, how small can the differences between the groups be (the “effect size”) for you to still detect a significant pattern (p < 0.05)?
+### Now begin adjusting the means of the different groups. Given the sample sizes you have chosen, how small can the differences between the groups be (the “effect size”) for you to still detect a significant pattern (p < 0.05)?
 
 ```{r}
 # Create random data
@@ -77,7 +77,7 @@ wolf <- 2 + preysize*.01 + filler # dependent variable
 plot(wolf,preysize)
 ```
 
-Alternatively, for the effect sizes you originally hypothesized, what is the minimum sample size you would need in order to detect a statistically significant effect? Again, run the model a few times with the same parameter set to get a feeling for the effect of random variation in the data.
+### Alternatively, for the effect sizes you originally hypothesized, what is the minimum sample size you would need in order to detect a statistically significant effect? Again, run the model a few times with the same parameter set to get a feeling for the effect of random variation in the data.
 
 ```{r}
 # Create random data
@@ -89,7 +89,7 @@ plot(wolf,preysize)
 ```
 
 
-Write up your results in a markdown file, organized with headers and different code chunks to show your analysis. Be explicit in your explanation and justification for sample sizes, means, and variances.
+### Write up your results in a markdown file, organized with headers and different code chunks to show your analysis. Be explicit in your explanation and justification for sample sizes, means, and variances.
 
 After analyzing some wolf pack size studies, I tried to mimic the linear pattern associated
 with prey size and wolf pack size. The filler component is to represent the outliers.
@@ -99,4 +99,14 @@ studies showed many unexpected outliers (such as the 2 wolves who are highly suc
 moose hunters) and the numbers here managed to almost mimic the pattern completely.
 With a little more tinkering and finding precise formulas, I should be able to 
 create a very accurate graph, but this seems like a good start.
+
+I will leave the journals here, in the event that I come back to this and want to create
+a more accurate data set to get a better understanding of this project.
+
+https://wolf.org/wp-content/uploads/2013/08/355.Differential-wolf-pack-size-persistence-and-the-role-of-risk-when-hunting-dangerous-prey.pdf
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5193335/
+
+This might be useful for later:
+https://www.middleprofessor.com/files/applied-biostatistics_bookdown/_book/creating-fake-data.html
 
