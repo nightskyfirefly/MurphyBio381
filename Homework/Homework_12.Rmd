@@ -8,9 +8,6 @@ output:
     highlight: github
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 This class gave me an advantage in my other classes!
 
@@ -19,8 +16,8 @@ I produced the best graphs.
 Thank you.
 
 
-![Graph 1](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.jpg)
+![Graph 1](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.png)
 
-![Graph 2](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.jpg)
+![Graph 2](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.png)
 
-![Graph 3](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.jpg)
+![Graph 3](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.png)
