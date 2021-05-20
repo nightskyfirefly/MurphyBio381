@@ -16,15 +16,15 @@ I am confident enough to claim that I produced the best graphs thanks to this cl
 Thank you!
 
 
-!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.png)
+![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.png)
 
-!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.png)
+![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.png)
 
-!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.png)
+![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.png)
 
-!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot10.png)
-
-
+![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot10.png)
 
 
-!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/malamutes.mp4)
+
+
+![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/malamutes.mp4)
