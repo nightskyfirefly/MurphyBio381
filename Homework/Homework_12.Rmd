@@ -11,13 +11,20 @@ output:
 
 This class gave me an advantage in my other classes!
 
-I produced the best graphs.
+I am confident enough to claim that I produced the best graphs thanks to this class!
 
-Thank you.
+Thank you!
 
 
-![Graph 1](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.png)
+!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot.png)
 
-![Graph 2](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.png)
+!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot19.png)
 
-![Graph 3](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.png)
+!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/Rplot20.png)
+
+
+
+
+
+
+!(https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/malamutes.mp4)
