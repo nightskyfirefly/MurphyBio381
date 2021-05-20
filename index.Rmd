@@ -9,7 +9,9 @@ output:
 ---
 ## The best title
 
-My name is *Mia* and I like **squirrels**
+My name is *Mia* and I like **squirrels**.
+
+Also, *doge*.
 
 ### Homework Assignments
 
@@ -39,4 +41,4 @@ My name is *Mia* and I like **squirrels**
 #### Homework 12: [Homework 12](Homework/Homework_12.html)
 
 
-![](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/malamutes.mp4)
+![*Bouncing malamutes*.](https://raw.githubusercontent.com/nightskyfirefly/MurphyBio381/main/Images/malamutes.mp4)
