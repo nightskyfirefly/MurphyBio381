@@ -1,6 +1,6 @@
 # Summary stats for batch processing of regression models
-# timestamp: 2021-05-20 01:46:45
-# NJG
+# timestamp: 2021-05-20 13:49:42
+# DCF
 # ------------------------
 
 "ID","fileName","slope","pVal","r2"

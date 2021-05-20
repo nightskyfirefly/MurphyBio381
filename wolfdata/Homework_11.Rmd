@@ -17,7 +17,7 @@ output:
 set.seed(100)
 
 ## Read in CSV
-moose1 <- read.csv('wolfdata/moose1.csv')
+moose1 <- read.csv('moose1.csv')
 
 
 # Summary
@@ -129,7 +129,7 @@ regStats <- function(d=NULL) {
 #--------------------------------------------
 # Global variables
 fileFolder <- "moosedata/"
-nFiles <- 10
+nFiles <- 5
 fileOut <- "StatsSummary.csv"
 #--------------------------------------------
 
@@ -177,7 +177,7 @@ for (i in seq_along(fileNames)) {
 
 ```
 
-```{r}
+```{r, warning = FALSE}
 
 # now add the data frame
   write.table(x=statsOut,
