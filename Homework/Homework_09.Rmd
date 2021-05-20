@@ -22,12 +22,12 @@ library(ggplot2)
 #Create fake data to mimic bison as main prey
 #considering young bison weight for the mean and SD
 
-fake1 <- function(size = 3500, preymean = 1500, preySD = 500, filler = 0.9, slope= 3) {
+fake1 <- function(size = 100, preymean = 2500, preySD = 500, filler = 0.9, slope= 3) {
       preysize <- rnorm(n = size, mean = preymean, sd = preySD) 
   filler <- rnorm(n = size, sd = filler) 
       wolf <- 0.002 * preysize * slope + filler
 
-      framedata <- seq_len(3500) 
+      framedata <- seq_len(100) 
       fake2 <- data.frame(framedata, preysize, wolf)
       return(fake2)}
 ```
@@ -57,12 +57,12 @@ library(ggplot2)
 #Create fake data to mimic deer as main prey
 #considering young deer weight for the mean and SD
 
-fake4 <- function(size2 = 350, preymean2 = 200, preySD2 = 20, filler2 = 1, slope2 = 1) {
+fake4 <- function(size2 = 100, preymean2 = 200, preySD2 = 20, filler2 = 1, slope2 = 1) {
       newpreysize <- rnorm(n = size2, mean = preymean2, sd = preySD2) 
   filler2 <- rnorm(n = size2, sd = filler2) 
       wolf2 <- 0.02 * newpreysize * slope2 + filler2
 
-      framedata2 <- seq_len(350) 
+      framedata2 <- seq_len(100) 
       fake5 <- data.frame(framedata2, newpreysize, wolf2)
       return(fake5)}
 ```
