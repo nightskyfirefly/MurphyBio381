@@ -32,7 +32,7 @@ My name is *Mia* and I like **squirrels**
 
 #### Homework 9: [Homework 9](Homework/Homework_09.html)
 
-#### Homework 10: [Homework 10](Homework/Homework_010.html)
+#### Homework 10: [Homework 10](Homework/Homework_10.html)
 
 #### Homework 11: [Homework 11](Homework/Homework_11.html)
 
