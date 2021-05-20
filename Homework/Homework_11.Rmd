@@ -16,7 +16,7 @@ After struggling to get datasets to fit parameters, I am showing the lecture wor
 and hopefully get a chance to use it in the future.
 
 
-```{r}
+```{r, warning = FALSE}
 
 
 ##################################################
@@ -76,7 +76,7 @@ write.table(x=dF,
 ```
 
 
-```{r}
+```{r, warning=FALSE}
 
 ##################################################
 # function: regStats
@@ -101,7 +101,7 @@ regStats <- function(d=NULL) {
 
 ```
 
-```{r}
+```{r, warning=FALSE}
 
 library(TeachingDemos)
 char2seed("Freezing March")

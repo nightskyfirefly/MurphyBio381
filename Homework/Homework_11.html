@@ -208,365 +208,161 @@ a.sourceLine {
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(statsList)</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingDemos)</span></code></pre></div>
-<pre><code>## Warning: package &#39;TeachingDemos&#39; was built under R version 4.0.5</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">char2seed</span>(<span class="st">&quot;Freezing March&quot;</span>)</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingDemos)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">char2seed</span>(<span class="st">&quot;Freezing March&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Global variables</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fileFolder <span class="ot">&lt;-</span> <span class="st">&quot;RandomFiles/&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>nFiles <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>fileOut <span class="ot">&lt;-</span> <span class="st">&quot;StatsSummary.csv&quot;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 100 random data sets</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(fileFolder)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">FileBuilder</span>(<span class="at">fileN=</span>nFiles)</span></code></pre></div>
+<pre><code>## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;
+## &quot;&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fileNames <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path=</span>fileFolder)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Global variables</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fileFolder <span class="ot">&lt;-</span> <span class="st">&quot;RandomFiles/&quot;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>nFiles <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fileOut <span class="ot">&lt;-</span> <span class="st">&quot;StatsSummary.csv&quot;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame to hold file summary statistics</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ID <span class="ot">&lt;-</span> <span class="fu">seq_along</span>(fileNames)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fileName <span class="ot">&lt;-</span> fileNames</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>pVal <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 100 random data sets</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(fileFolder)</span></code></pre></div>
-<pre><code>## Warning in dir.create(fileFolder): &#39;RandomFiles&#39; already exists</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">FileBuilder</span>(<span class="at">fileN=</span>nFiles)</span></code></pre></div>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<pre><code>## &quot;&quot;</code></pre>
-<pre><code>## Warning in write.table(x = dF, file = fileLabel, sep = &quot;,&quot;, row.names = FALSE, :
-## appending column names to file</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a>fileNames <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path=</span>fileFolder)</span>
-<span id="cb208-2"><a href="#cb208-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb208-3"><a href="#cb208-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame to hold file summary statistics</span></span>
-<span id="cb208-4"><a href="#cb208-4" aria-hidden="true" tabindex="-1"></a>ID <span class="ot">&lt;-</span> <span class="fu">seq_along</span>(fileNames)</span>
-<span id="cb208-5"><a href="#cb208-5" aria-hidden="true" tabindex="-1"></a>fileName <span class="ot">&lt;-</span> fileNames</span>
-<span id="cb208-6"><a href="#cb208-6" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
-<span id="cb208-7"><a href="#cb208-7" aria-hidden="true" tabindex="-1"></a>pVal <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
-<span id="cb208-8"><a href="#cb208-8" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,nFiles)</span>
-<span id="cb208-9"><a href="#cb208-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb208-10"><a href="#cb208-10" aria-hidden="true" tabindex="-1"></a>statsOut <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ID,fileName,slope,pVal,r2)</span>
-<span id="cb208-11"><a href="#cb208-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb208-12"><a href="#cb208-12" aria-hidden="true" tabindex="-1"></a><span class="co"># batch process by looping through individual files</span></span>
-<span id="cb208-13"><a href="#cb208-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(fileNames)) {</span>
-<span id="cb208-14"><a href="#cb208-14" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="fu">paste</span>(fileFolder,fileNames[i],<span class="at">sep=</span><span class="st">&quot;&quot;</span>),</span>
-<span id="cb208-15"><a href="#cb208-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,</span>
-<span id="cb208-16"><a href="#cb208-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">header=</span><span class="cn">TRUE</span>) <span class="co"># read in next data file</span></span>
-<span id="cb208-17"><a href="#cb208-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb208-18"><a href="#cb208-18" aria-hidden="true" tabindex="-1"></a>  dClean <span class="ot">&lt;-</span> data[<span class="fu">complete.cases</span>(data),] <span class="co"># get clean cases</span></span>
-<span id="cb208-19"><a href="#cb208-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb208-20"><a href="#cb208-20" aria-hidden="true" tabindex="-1"></a>  . <span class="ot">&lt;-</span> <span class="fu">regStats</span>(dClean) <span class="co"># pull regression stats from clean file</span></span>
-<span id="cb208-21"><a href="#cb208-21" aria-hidden="true" tabindex="-1"></a>  statsOut[i,<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="fu">unlist</span>(.) <span class="co"># unlist, copy into last 3 columns</span></span>
-<span id="cb208-22"><a href="#cb208-22" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb208-23"><a href="#cb208-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb208-24"><a href="#cb208-24" aria-hidden="true" tabindex="-1"></a><span class="co"># set up output file and incorporate time stamp and minimal metadata</span></span>
-<span id="cb208-25"><a href="#cb208-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="fu">cat</span>(<span class="st">&quot;# Summary stats for &quot;</span>,</span>
-<span id="cb208-26"><a href="#cb208-26" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;batch processing of regression models&quot;</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb208-27"><a href="#cb208-27" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# timestamp: &quot;</span>,<span class="fu">as.character</span>(<span class="fu">Sys.time</span>()),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb208-28"><a href="#cb208-28" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# NJG&quot;</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb208-29"><a href="#cb208-29" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# ------------------------&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb208-30"><a href="#cb208-30" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
-<span id="cb208-31"><a href="#cb208-31" aria-hidden="true" tabindex="-1"></a>                    <span class="at">file=</span>fileOut,</span>
-<span id="cb208-32"><a href="#cb208-32" aria-hidden="true" tabindex="-1"></a>                    <span class="at">row.names=</span><span class="st">&quot;&quot;</span>,</span>
-<span id="cb208-33"><a href="#cb208-33" aria-hidden="true" tabindex="-1"></a>                    <span class="at">col.names=</span><span class="st">&quot;&quot;</span>,</span>
-<span id="cb208-34"><a href="#cb208-34" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
-<pre><code>## &quot;&quot;</code></pre>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now add the data frame</span></span>
-<span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="at">x=</span>statsOut,</span>
-<span id="cb210-3"><a href="#cb210-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">file=</span>fileOut,</span>
-<span id="cb210-4"><a href="#cb210-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">row.names=</span><span class="cn">FALSE</span>,</span>
-<span id="cb210-5"><a href="#cb210-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col.names=</span><span class="cn">TRUE</span>,</span>
-<span id="cb210-6"><a href="#cb210-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,</span>
-<span id="cb210-7"><a href="#cb210-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">append=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## Warning in write.table(x = statsOut, file = fileOut, row.names = FALSE, :
-## appending column names to file</code></pre>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>statsOut <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ID,fileName,slope,pVal,r2)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># batch process by looping through individual files</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(fileNames)) {</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="fu">paste</span>(fileFolder,fileNames[i],<span class="at">sep=</span><span class="st">&quot;&quot;</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">header=</span><span class="cn">TRUE</span>) <span class="co"># read in next data file</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  dClean <span class="ot">&lt;-</span> data[<span class="fu">complete.cases</span>(data),] <span class="co"># get clean cases</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  . <span class="ot">&lt;-</span> <span class="fu">regStats</span>(dClean) <span class="co"># pull regression stats from clean file</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  statsOut[i,<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="fu">unlist</span>(.) <span class="co"># unlist, copy into last 3 columns</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># set up output file and incorporate time stamp and minimal metadata</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="fu">cat</span>(<span class="st">&quot;# Summary stats for &quot;</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;batch processing of regression models&quot;</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# timestamp: &quot;</span>,<span class="fu">as.character</span>(<span class="fu">Sys.time</span>()),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# NJG&quot;</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;# ------------------------&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>                    <span class="at">file=</span>fileOut,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>                    <span class="at">row.names=</span><span class="st">&quot;&quot;</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>                    <span class="at">col.names=</span><span class="st">&quot;&quot;</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<pre><code>## &quot;&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now add the data frame</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="at">x=</span>statsOut,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">file=</span>fileOut,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">row.names=</span><span class="cn">FALSE</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col.names=</span><span class="cn">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">append=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </section>
 
 
